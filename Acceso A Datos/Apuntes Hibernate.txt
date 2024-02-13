@@ -1,0 +1,131 @@
+Teorica ORM:
+go gorm
+java hibernate 
+python sqlAlquemist
+
+jpa java persistence api; un conjunto de apis == es un estandar para que los metodos de todas las apis sigan el mismo
+
+=============================================================================
+Hibernate para NetBeans:
+
+-crear una nueva base de datos
+-crear proyecto con java maven
+-ir al pom e crear la etiqueta <dependencies> y poner el codigo del importe de maven repositorio de mysql connector dentro
+-guardar los cambios y hacer un clean y build del proyecto para que se comienze a instalar los repositorios
+
+-ir a servicios, database, nueva conexion, crear nuevo driver 
+-ir a la rita usuarios m2 dependencies com (donde esta el jdbc.connector)
+-configurar las opciones de la conexion en la proxima ventana
+-en la jdbc url = jdbc:mysql://localhost:3306/hibernate_prueba?serverTimezone=UTC
+- finalizar
+
+-crear un fichero de persistencia -> new file -> other -> persistence
+-instalar los repositorios de hibernate
+-dentro del objeto de presistencia cambiar en el codigo -> <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+tambien cambiar todas las propiedades a jakarta
+    <properties>
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hibernate_prueba?serverTimezone=UTC"/>
+      <property name="jakarta.persistence.jdbc.user" value="root"/>
+      <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="jakarta.persistence.jdbc.password" value=""/>
+      <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+    </properties>
+
+-crear un .java con lo siguiente:
+=============================================================================
+public class Hibernate_config {
+
+    private EntityManagerFactory factory;
+    private EntityManager manager;
+
+    public EntityManagerFactory getFactory() {
+        return factory;
+    }
+
+    public EntityManager getManager() {
+        return manager = new Hibernate_config().getFactory().createEntityManager();
+    }
+
+    public Hibernate_config() {
+        this.setFactory(Persistence.createEntityManagerFactory("HIbernateTestPU"));
+    }
+
+    public void setFactory(EntityManagerFactory factory) {
+        this.factory = factory;
+    }
+
+    public void closeConection() {
+        manager.close();
+        factory.close();
+    }
+
+}
+=============================================================================
+y creamos un poyo dentro de modelo de negocio
+esto generaria la tabla roles, pero la clase seria rol
+el @entity(name = "Rols") significa que es una tabla y se crea con el nombre modificado de Rols, y el @Id significa que el atributo es una primary Key
+hibernate genera automaticamente una tabla y una columna para cada atributo dentro de la clase
+=============================================================================
+package com.mycompany.Logica_negocio;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Role {
+    
+    @Id
+    private int id;
+    private String role;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" + "id=" + id + ", role=" + role + '}';
+    }
+
+    public Role(int id, String role) {
+        this.id = id;
+        this.role = role;
+    }
+    
+    
+}
+
+=============================================================================
+Y dentro del main hacer la llamada a la clase
+(asegurarse que la coneccion este activa en la ventana services)
+=============================================================================
+    public static void main(String[] args) {
+        new Hibernate_config(); 
+    }
+=============================================================================
+
+
+
+
+
+
+
+
+
+
+
+=============================================================================
+Bases de datos:
+entidad relacion es la primera conversion teorica del modelo fisico a una base de datos teorica
+modelo relacional es la base de datos ya creada

@@ -1,0 +1,23 @@
+Obligatorio: 
+
+- proyecto netbeans con nombre: DeepRock
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- zip nombrado: G1_DeepRock dentro -->
+- Integrantes.txt con integrantes del equipo
+- documentacion pdf/word 25~%
+- presentacion.ppts 25~% 
+    15~ mins presentacion , 15~ mins preguntas y respuestas 
+
+	20 mins para vender lo que hayamos hecho; minipresentacion que es, que hace, que tecnologias usamos.
+	abrir la aplicacion y hacer una demo, que hace como lo hace; un recorrido general.
+	combinar eso con una domostracion ligera del codigo, metodos, clases, cosas en general interesantes.
+
+		lo mismo aplica para los proyectos finales de las CFGs
+	
+- proyecto 50~%
+
+documentacion enumerada con paginas, indice, introduccion
+hay que meter xml no hace falta hacerlo todo, tambien se puede forzar un caso
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
