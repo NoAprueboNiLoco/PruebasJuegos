@@ -1,0 +1,6 @@
+com\mycompany\hibernate_prueba\Hibernate_config.class
+DAO\RolDAO.class
+com\mycompany\Logica_negocio\Role.class
+DAOImplementations\RolDAOImplementation.class
+com\mycompany\Logica_negocio\User.class
+com\mycompany\hibernate_prueba\Hibernate_Prueba.class
