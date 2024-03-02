@@ -27,5 +27,4 @@ public class Hibernate_config {
         manager.close();
         factory.close();
     }
-
 }

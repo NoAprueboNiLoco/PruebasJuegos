@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Hibernate_Prueba">
+    <output-path>$PROJECT_DIR$/out/artifacts/Hibernate_Prueba</output-path>
+    <root id="root">
+      <element id="archive" name="Hibernate_Prueba.jar">
+        <element id="module-output" name="Hibernate_Prueba" />
+      </element>
+    </root>
+  </artifact>
+</component>
